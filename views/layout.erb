@@ -1,0 +1,26 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf8">  
+  <title><%= "#{SITE_TITLE}" %></title>   
+  <link href="/style.css" rel="stylesheet">  
+</head>  
+<body>  
+  <header>  
+      <h1 id="title"><a href="/"><%= SITE_TITLE %></a></h1>  
+      <p><%= SITE_DESCRIPTION %></p>  
+  </header>  
+
+  <form method="get" action="/search" id="search">
+    <input name="query" type="text" size="40" placeholder="song name, artist, album..." />
+  </form>
+  
+  <div id="main">  
+    <%= yield %>  
+  </div>  
+  
+  <footer>  
+    <p><small>An app by <a href="http://devendayal.com">Deven</a>.</small></p>  
+  </footer>  
+</body>  
+</html>  

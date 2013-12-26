@@ -1,0 +1,22 @@
+<script src="http://www.domain.com/Folder-Name/AC_QuickTime.js" language="javascript"> </script>
+
+<p>
+<ul id="results-list">
+<% @results.results.each do |result| %>
+	<li>
+		<div class="result-container">
+			<div class="media-container">
+				<img src="<%= result.artwork_url100 %>" />
+				<embed type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"src="<%=result.preview_url%>" controller="true" preload="none" autoplay="false"/>
+			</div>
+			<div class="info-container">
+				<%= "#{result.track_name} - #{result.artist_name} (#{result.collection_name})" %>
+			</div>
+		</div>
+	</li>
+<% end %>
+</ul>
+<% if @results.result_count==0 || @results==nil %>
+	no results found
+<% end %>
+</p>
